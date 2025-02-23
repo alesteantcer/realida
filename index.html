@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba AR sin Marcador</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/jeromeetienne/ar.js@1.7.2/aframe/build/aframe-ar.min.js"></script>
+</head>
+<body style="margin: 0; overflow: hidden;">
+    <a-scene embedded arjs>
+        <!-- Cubo rojo flotando frente a la cámara -->
+        <a-entity 
+        gltf-model="modelos/mi-modelo.glb" 
+        position="0 0 -3" 
+        scale="0.5 0.5 0.5">
+    </a-entity>
+    <a-entity 
+    geometry="primitive: plane; width: 0.5; height: 0.5" 
+    material="color: blue"
+    position="0 0.8 0"
+    text="value: 1; align: center; color: white;"
+    onclick="mostrarInformacion(1)">
+</a-entity>
+        <a-entity camera></a-entity>
+    </a-scene>
+    <script>
+        function mostrarInformacion(numero) {
+            alert("Mostrando información del número " + numero);
+        }
+    </script>
+</body>
+</html>
